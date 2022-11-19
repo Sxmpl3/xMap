@@ -1,0 +1,61 @@
+#!/bin/bash        
+
+#COLOURS 
+
+green="\e[0;32m"
+end="\e[0;0m"
+red="\e[0;31m"
+gray="\e[0;37"
+yellow="\e[0;33m"
+blue="\e[0;34m"
+
+
+counter=0
+top_counter=500
+
+if [[ $1 == "-i" && $2 =~ [0-9]{1,5} ]]; then
+
+        echo "$(tput setaf 12)_________________________________________"
+        echo "|                                       |"
+        echo "|        Sxmpl3 xMap v1.0               |"
+        echo "|                                       |"
+        echo "|   https://github.com/Sxmpl3/          |"
+        echo "|_______________________________________|"
+        echo "$(tput setaf 2) "
+        echo ""
+        sleep 1s
+        echo -e "\n ${yellow}[+]${end} ${gray} Scaneando puertos..."${end}   
+        echo ""
+
+        for port in $(seq 1 65535); do
+	
+                if [ $counter == $top_counter ]; then
+                        wait
+                        let top_counter+=500
+                fi
+                
+                timeout 1 bash -c "echo '' > /dev/tcp/"$2"/$port" 2>/dev/null && echo -e "\n ${yellow}[/]${end} ${gray} Puerto${end} ${blue}$port${end} ${gray} - OPEN${end}" &
+                
+                let counter+=1
+        done;wait
+        exit 1	
+    
+else
+
+        echo "$(tput setaf 12)_________________________________________"
+        echo "|                                       |"
+        echo "|        Sxmpl3 xMap v1.0               |"
+        echo "|                                       |"
+        echo "|   https://github.com/Sxmpl3/          |"
+        echo "|_______________________________________|"
+        echo "$(tput setaf 2) "
+        echo " "
+        echo "-> [HOW TO USE]"
+        echo " "
+        echo "-> ""xMap -i (IP address)"
+
+  exit 1
+
+fi
+
+
