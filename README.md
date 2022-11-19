@@ -1,7 +1,7 @@
 # xMap
 Scanning tool for open protocolos of an IP.
 
-#How to install 
+# How to install 
 
   [1] git clone https://github.com/Sxmpl3/xMap
 
