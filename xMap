@@ -11,7 +11,7 @@ blue="\e[0;34m"
 
 
 counter=0
-top_counter=500
+top_counter=50
 
 if [[ $1 == "-i" && $2 =~ [0-9]{1,5} ]]; then
 
@@ -24,14 +24,14 @@ if [[ $1 == "-i" && $2 =~ [0-9]{1,5} ]]; then
         echo "$(tput setaf 2) "
         echo ""
         sleep 1s
-        echo -e "\n ${yellow}[+]${end} Scaneando puertos..."
+        echo -e "\n ${yellow}[+]${end} Escaneando puertos..."
         echo ""
 
         for port in $(seq 1 65535); do
 	
                 if [ $counter == $top_counter ]; then
                         wait
-                        let top_counter+=100
+                        let top_counter+=50
                 fi
                 
                 timeout 1 bash -c "echo '' > /dev/tcp/"$2"/$port" 2>/dev/null && echo -e "\n ${yellow}[/]${end} Puerto ${blue}$port${end} - OPEN" &
