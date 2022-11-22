@@ -17,9 +17,9 @@ if [[ $1 == "-i" && $2 =~ [0-9]{1,5} ]]; then
 
         echo "$(tput setaf 12)_________________________________________"
         echo "|                                       |"
-        echo "|        Sxmpl3 xMap v1.0               |"
+        echo "|          Sxmpl3 xMap v1.0             |"
         echo "|                                       |"
-        echo "|   https://github.com/Sxmpl3/          |"
+        echo "|      https://github.com/Sxmpl3/       |"
         echo "|_______________________________________|"
         echo "$(tput setaf 2) "
         echo ""
@@ -44,9 +44,9 @@ else
 
         echo "$(tput setaf 12)_________________________________________"
         echo "|                                       |"
-        echo "|        Sxmpl3 xMap v1.0               |"
+        echo "|          Sxmpl3 xMap v1.0             |"
         echo "|                                       |"
-        echo "|   https://github.com/Sxmpl3/          |"
+        echo "|      https://github.com/Sxmpl3/       |"
         echo "|_______________________________________|"
         echo "$(tput setaf 2) "
         echo " "
